@@ -172,6 +172,30 @@
             });
     }
 </script>
+
+<script type="text/javascript">
+    $('#current_country').on('change', function () {
+        get_port_by_destination();
+    });
+
+    function get_port_by_destination() {
+        var current_country = $('#current_country').val();
+        $.post('{{ route('getCountryPorts') }}', {
+                _token: '{{ csrf_token() }}',
+                country_id: current_country
+            },
+            function (data) {
+                $('#current_port').html(null);
+                $('#current_port').append($('<option value="">Select A Port</option>', {}));
+                for (var i = 0; i < data.length; i++) {
+                    $('#current_port').append($('<option>', {
+                        value: data[i].id,
+                        text: data[i].name
+                    }));
+                }
+            });
+    }
+</script>
 </body>
 
 </html>

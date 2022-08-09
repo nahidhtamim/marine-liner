@@ -28,18 +28,6 @@ class BookingController extends Controller
 
     public function saveBooking(Request $request){
 
-        $this->validate($request, array(
-            'tracking_id'       =>  'required|unique:bookings',
-            'company_name'      =>  'required',
-            'company_address'   =>  'required',
-            'from_country'      =>  'required',
-            'from_port'         =>  'required',
-            'destination_country'=> 'required',
-            'destination_port'  =>   'required',
-            'container_id'      =>  'required',
-            'goods'             =>  'required',
-        ));
-
         $randomNumber = random_int(100000, 999999);
 
         $booking = new Booking();
@@ -55,12 +43,38 @@ class BookingController extends Controller
         $booking->goods = $request->input('goods');
         $booking->save();
 
-        $tracking = new Tracking();
-        $tracking->booking_id = 'ML'. $randomNumber;
-        $tracking->from_country = $request->input('from_country');
-        $tracking->from_port = $request->input('from_port');
-        $booking->save();
         return redirect('/bookings')->with('status', 'Booking Added Successfully');
+    }
+
+    public function editBooking($tracking_id){
+        $countries = Country::all();
+        $ports = Port::all();
+        $containers = Container::all();
+        $booking = Booking::where('tracking_id', $tracking_id)->first();
+        return view('admin.bookings.edit', compact('booking', 'countries', 'ports', 'containers'));
+    }
+
+    public function updateBooking($tracking_id, Request $request){
+
+        $booking = Booking::where('tracking_id', $tracking_id)->first();
+        $booking->company_name = $request->input('company_name');
+        $booking->company_address = $request->input('company_address');
+        $booking->from_country = $request->input('from_country');
+        $booking->from_port = $request->input('from_port');
+        $booking->destination_country = $request->input('destination_country');
+        $booking->destination_port = $request->input('destination_port');
+        $booking->container_id = $request->input('container_id');
+        $booking->booking_date = $request->input('booking_date');
+        $booking->goods = $request->input('goods');
+        $booking->update();
+
+        return redirect('/bookings')->with('status', 'Booking Updated Successfully');
+    }
+
+    public function deleteBooking($tracking_id){
+        $booking = Booking::where('tracking_id', $tracking_id)->first();
+        $booking->delete();
+        return redirect('/bookings')->with('warning', 'Booking Deleted Successfully');
     }
 
 

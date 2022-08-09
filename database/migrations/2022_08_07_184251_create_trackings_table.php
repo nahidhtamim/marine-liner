@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('booking_id');
             $table->tinyInteger('current_country');
             $table->tinyInteger('current_port');
+            $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });
     }

@@ -50,7 +50,7 @@ Bookings | A Logistics Company
                         @foreach ($bookings as $booking)
                             <tr>
                                 <td>{{$booking->id}}</td>
-                                <td>{{$booking->tracking_id}}</td>
+                                <td>{{$booking->tracking_id}} <a href="{{url('/trackings/'.$booking->tracking_id)}}" class="btn btn-primary btn-sm"> <i class="fa fa-eye"></i> </a></td>
                                 <td>{{$booking->company_name}}</td>
                                 <td>{{$booking->company_address}}</td>
                                 <td>{{$booking->from_c->name}}</td>
@@ -111,9 +111,11 @@ Bookings | A Logistics Company
                                 <label for="company_name" class="text-primary"> <b>Company Name <span class="text-danger">*</span></b> </label>
                                 <input type="text" name="company_name" class="form-control @error('company_name') is-invalid @enderror" id="company_name"
                                     placeholder="Company Name" required="">
-                                @error('company_name')
-                                    <p class="text-danger">{{$message}}</p> 
-                                @enderror    
+                                    <span class="text-danger">
+                                        @error('company_name')
+                                            <p class="text-danger">{{$message}}</p> 
+                                        @enderror
+                                    </span>   
                                 <br>
                             </div>
 
@@ -121,9 +123,11 @@ Bookings | A Logistics Company
                                 <label for="company_address" class="text-primary"> <b>Company Address <span class="text-danger">*</span></b> </label>
                                 <input type="text" name="company_address" class="form-control @error('company_address') is-invalid @enderror" id="company_address"
                                     placeholder="Company Address" required="">
-                                @error('company_address')
-                                    <p class="text-danger">{{$message}}</p> 
-                                @enderror    
+                                    <span class="text-danger">
+                                        @error('company_address')
+                                            <p class="text-danger">{{$message}}</p> 
+                                        @enderror
+                                    </span> 
                                 <br>
                             </div>
 
@@ -135,11 +139,6 @@ Bookings | A Logistics Company
                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                     @endforeach
                                 </select>
-                                <span class="text-danger">
-                                    @error('from_country')
-                                        <p class="text-danger">{{$message}}</p> 
-                                    @enderror
-                                </span>
                                 <br>
                             </div>
 
@@ -152,11 +151,6 @@ Bookings | A Logistics Company
                                         <option value="{{$port->id}}">{{$port->name}}</option>
                                     @endforeach --}}
                                 </select>
-                                <span class="text-danger">
-                                    @error('from_port')
-                                        <p class="text-danger">{{$message}}</p> 
-                                    @enderror
-                                </span>
                                 <br>
                             </div>
 
@@ -168,11 +162,6 @@ Bookings | A Logistics Company
                                         <option value="{{$country->id}}">{{$country->name}}</option>
                                     @endforeach
                                 </select>
-                                <span class="text-danger">
-                                    @error('destination_country')
-                                        <p class="text-danger">{{$message}}</p> 
-                                    @enderror
-                                </span>
                                 <br>
                             </div>
 
@@ -185,11 +174,6 @@ Bookings | A Logistics Company
                                         <option value="{{$port->id}}">{{$port->name}}</option>
                                     @endforeach --}}
                                 </select>
-                                <span class="text-danger">
-                                    @error('destination_port')
-                                        <p class="text-danger">{{$message}}</p> 
-                                    @enderror
-                                </span>
                                 <br>
                             </div>
 
@@ -201,29 +185,18 @@ Bookings | A Logistics Company
                                         <option value="{{$container->id}}">{{$container->name}}</option>
                                     @endforeach
                                 </select>
-                                <span class="text-danger">
-                                    @error('container_id')
-                                        <p class="text-danger">{{$message}}</p> 
-                                    @enderror
-                                </span>
                                 <br>
                             </div>
 
                             <div class="col-12 mb-3 mb-sm-0">
                                 <label for="booking_date" class="text-primary"> <b>Booking Date <span class="text-danger">*</span></b> </label>
                                 <input type="date" name="booking_date" class="form-control @error('booking_date') is-invalid @enderror" id="booking_date" required="">
-                                @error('booking_date')
-                                    <p class="text-danger">{{$message}}</p> 
-                                @enderror    
                                 <br>
                             </div>
 
                             <div class="col-12 mb-3 mb-sm-0">
                                 <label for="goods" class="text-primary"> <b>Goods <span class="text-danger">*</span></b> </label>
-                                <textarea name="goods" id="goods" class="form-control @error('slug') is-invalid @enderror" rows="2">Description of your goods</textarea>
-                                @error('goods')
-                                    <p class="text-danger">{{$message}}</p> 
-                                @enderror    
+                                <textarea name="goods" id="goods" class="form-control @error('slug') is-invalid @enderror" rows="2">Description of your goods</textarea> 
                                 <br>
                             </div>
 

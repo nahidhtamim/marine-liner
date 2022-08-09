@@ -15,5 +15,16 @@ class Tracking extends Model
         'booking_id',
         'current_country',
         'current_port',
+        'status',
     ];
+
+    public function country_info()
+    {
+        return $this->belongsTo(Country::class,'current_country','id');
+    }
+    public function port_info()
+    {
+        return $this->belongsTo(Country::class,'current_port','id');
+    }
+
 }

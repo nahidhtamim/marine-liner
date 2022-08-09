@@ -59,10 +59,17 @@ Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
     // Containers Routes
     Route::get('/bookings', [BookingController::class, 'index']);
     Route::post('/save-booking', [BookingController::class, 'saveBooking']);
-    Route::get('/edit-booking/{slug}', [BookingController::class, 'editBooking']);
-    Route::post('/update-booking/{slug}', [BookingController::class, 'updateBooking']);
-    Route::get('/delete-booking/{slug}', [BookingController::class, 'deleteBooking']);
+    Route::get('/edit-booking/{tracking_id}', [BookingController::class, 'editBooking']);
+    Route::post('/update-booking/{tracking_id}', [BookingController::class, 'updateBooking']);
+    Route::get('/delete-booking/{tracking_id}', [BookingController::class, 'deleteBooking']);
     Route::post('getCountryPorts',[BookingController::class,'getCountryPorts'])->name('getCountryPorts');
+    
+    // Trackings Routes
+    Route::get('/trackings/{booking_id}', [TrackingController::class, 'index']);
+    Route::post('/save-tracking', [TrackingController::class, 'saveTracking']);
+    Route::get('/edit-tracking/{booking_id}', [TrackingController::class, 'editTracking']);
+    Route::post('/update-tracking/{booking_id}', [TrackingController::class, 'updateTracking']);
+    Route::get('/delete-tracking/{booking_id}', [TrackingController::class, 'deleteTracking']);
 
     // Route::get('/services', [CountryController::class, 'index']);
     // Route::get('/add-service', [CountryController::class, 'addService']);
@@ -74,6 +81,4 @@ Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
     // Route::get('/service-deactive/{id}', [CountryController::class, 'deactive']);
  
  });
-// Auth::routes();
 
-// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

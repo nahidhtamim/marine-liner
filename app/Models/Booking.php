@@ -20,6 +20,7 @@ class Booking extends Model
         'destination_country',
         'destination_port',
         'container_id',
+        'booking_date',
         'goods',
     ];
 
