@@ -22,7 +22,7 @@
                     <button id="dropdownAvatarNameButton" data-dropdown-toggle="dropdownAvatarName" class="items-center text-sm font-medium btn-primary hidden md:flex" type="button">
                       <span class="sr-only">Open user menu</span>
                       <img class="mr-2 w-6 h-6 rounded-full" src="{{asset('frontend/assets/images/Avatar_poe84it.png')}}" alt="user photo">
-                      Bonnie Green
+                      {{Auth::user()->name}}
                       <svg class="w-4 h-4 mx-1.5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
                       </svg>
@@ -30,19 +30,13 @@
         
                     <!-- Dropdown menu -->
                     <div id="dropdownAvatarName" class="z-10 w-44 bg-white rounded divide-y divide-gray-100 shadow hidden" data-popper-placement="bottom" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate(0px, 10px);" data-popper-reference-hidden="" data-popper-escaped="">
-                      <div class="py-3 px-4 text-sm hover:bg-slate-100">
-                        <a href="#">
-                          <div class="font-medium">Admin</div>
-                          <div class="truncate">{{Auth::user()->name}}</div>
-                        </a>
-                      </div>
                       <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
                         <li>
-                          <a href="#" class="block py-2 px-4 hover:bg-gray-100">Your Bookings</a>
+                          <a href="{{url('/my-bookings')}}" class="block py-2 px-4 hover:bg-gray-100">Your Bookings</a>
                         </li>
-                        <li>
+                        {{-- <li>
                           <a href="#" class="block py-2 px-4 hover:bg-gray-100">Tracking</a>
-                        </li>
+                        </li> --}}
                       </ul>
                       <div class="py-1">
                         <a href="{{ route('logout') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="event.preventDefault();
@@ -90,7 +84,7 @@
                     </li>
                     <li>
                         <a href="{{url('booking')}}"
-                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Bookings</a>
+                            class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 lg:hover:bg-transparent lg:border-0 lg:hover:text-primary-700 lg:p-0">Booking</a>
                     </li>
 
                     <li>
@@ -131,11 +125,11 @@
                       </div>
                       <ul class="py-1 text-sm text-gray-700" aria-labelledby="dropdownInformdropdownAvatarNameButtonationButton">
                         <li>
-                          <a href="#" class="block py-2 px-4 hover:bg-gray-100">Your Bookings</a>
+                          <a href="{{url('/my-bookings')}}" class="block py-2 px-4 hover:bg-gray-100">Your Bookings</a>
                         </li>
-                        <li>
-                          <a href="#" class="block py-2 px-4 hover:bg-gray-100">Tracking</a>
-                        </li>
+                        {{-- <li>
+                          <a href="{{url('/tracking/'.)}}" class="block py-2 px-4 hover:bg-gray-100">Tracking</a>
+                        </li> --}}
                       </ul>
                       <div class="py-1">
                         <a href="{{ route('logout') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="event.preventDefault();

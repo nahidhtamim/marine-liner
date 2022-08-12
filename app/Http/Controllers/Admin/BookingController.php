@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Helpers\Helper;
 use App\Http\Controllers\Controller;
 use App\Models\Booking;
 use App\Models\Container;
@@ -9,6 +10,7 @@ use App\Models\Country;
 use App\Models\Port;
 use App\Models\Tracking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BookingController extends Controller
 {
@@ -28,10 +30,9 @@ class BookingController extends Controller
 
     public function saveBooking(Request $request){
 
-        $randomNumber = random_int(100000, 999999);
-
+        $tracking_id = Helper::trackingNumberGenerate(new Booking, 'tracking_id', 6, 'ML'); /** Generate Tracking Number */
         $booking = new Booking();
-        $booking->tracking_id = 'ML'. $randomNumber;
+        $booking->tracking_id = $tracking_id;
         $booking->company_name = $request->input('company_name');
         $booking->company_address = $request->input('company_address');
         $booking->from_country = $request->input('from_country');
@@ -41,6 +42,7 @@ class BookingController extends Controller
         $booking->container_id = $request->input('container_id');
         $booking->booking_date = $request->input('booking_date');
         $booking->goods = $request->input('goods');
+        $booking->user_id = Auth::user()->id;
         $booking->save();
 
         return redirect('/bookings')->with('status', 'Booking Added Successfully');

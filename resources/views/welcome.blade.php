@@ -38,7 +38,7 @@
             </p>
 
             <div class="flex flex-wrap justify-start gap-4 mt-8">
-                <a class="btn-transparent" href="/get-started"> Get Started </a>
+                <a class="btn-transparent" href="{{url('/booking')}}"> Get Started </a>
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@
                 you need in a rapidly evolving marketplace.
             </p>
             <div>
-                <a class="px-6 py-3 btn-primary" href="/get-started">
+                <a class="px-6 py-3 btn-primary" href="{{url('/booking')}}">
                     Get Started
                 </a>
             </div>
@@ -90,7 +90,7 @@
             For Zero Impact on the Atmosphere
         </p>
         <div class="flex justify-center">
-            <button type="button" class="btn-transparent">Read More</button>
+            <button type="button" href="{{url('/about')}}" class="btn-transparent">Read More</button>
         </div>
     </div>
 </div>
@@ -106,7 +106,7 @@
                 you need in a rapidly evolving marketplace.
             </p>
             <div>
-                <button type="button" class="px-6 py-3 btn-primary">
+                <button type="button" {{url('/booking')}} class="px-6 py-3 btn-primary">
                     Get started
                 </button>
             </div>
@@ -129,7 +129,7 @@
                     so far, in reverse chronological order.
                 </p>
 
-                <a href="#" class="inline-flex items-center px-6 py-3 btn-primary">
+                <a href="{{url('/about')}}" class="inline-flex items-center px-6 py-3 btn-primary">
                     Read more
                     <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -143,13 +143,13 @@
 
         <div
             class="shadow-md bg-gradient-to-r from-gray-50 hover:bg-blue-50 hover:cursor-pointer hover:-translate-y-3 transition duration-150 ease-in-out">
-            <a href="#">
+            <a href="{{url('/about')}}">
                 <img class="rounded-t-lg"
                     src="https://www.maersk.com/~/media_sc9/maersk/solutions/transportation-services/images/transportation-services_illustration.svg?w=1000&hash=F68E778D455E2B30243A7458F0C2445C"
                     alt="" />
             </a>
             <div class="p-5">
-                <a href="#">
+                <a href="{{url('/about')}}">
                     <h6 class="mb-2">Lorem ipsum dolor sit amet.</h6>
                 </a>
                 <p class="mb-3 text-gray-500">
@@ -157,7 +157,7 @@
                     so far, in reverse chronological order.
                 </p>
 
-                <a href="#" class="inline-flex items-center px-6 py-3 btn-primary">
+                <a href="{{url('/about')}}" class="inline-flex items-center px-6 py-3 btn-primary">
                     Read more
                     <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -171,13 +171,13 @@
 
         <div
             class="shadow-md bg-gradient-to-r from-gray-50 hover:bg-blue-50 hover:cursor-pointer hover:-translate-y-3 transition duration-150 ease-in-out">
-            <a href="#">
+            <a href="{{url('/about')}}">
                 <img class="rounded-t-lg"
                     src="https://www.maersk.com/~/media_sc9/maersk/solutions/transportation-services/images/transportation-services_illustration.svg?w=1000&hash=F68E778D455E2B30243A7458F0C2445C"
                     alt="" />
             </a>
             <div class="p-5">
-                <a href="#">
+                <a href="{{url('/about')}}">
                     <h6 class="mb-2">Lorem ipsum dolor sit amet.</h6>
                 </a>
                 <p class="mb-3 text-gray-500">
@@ -185,7 +185,7 @@
                     so far, in reverse chronological order.
                 </p>
 
-                <a href="#" class="inline-flex items-center px-6 py-3 btn-primary">
+                <a href="{{url('/about')}}" class="inline-flex items-center px-6 py-3 btn-primary">
                     Read more
                     <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -199,13 +199,13 @@
 
         <div
             class="shadow-md bg-gradient-to-r from-gray-50 hover:bg-blue-50 hover:cursor-pointer hover:-translate-y-3 transition duration-150 ease-in-out">
-            <a href="#">
+            <a href="{{url('/about')}}">
                 <img class="rounded-t-lg"
                     src="https://www.maersk.com/~/media_sc9/maersk/solutions/transportation-services/images/transportation-services_illustration.svg?w=1000&hash=F68E778D455E2B30243A7458F0C2445C"
                     alt="" />
             </a>
             <div class="p-5">
-                <a href="#">
+                <a href="{{url('/about')}}">
                     <h6 class="mb-2">Lorem ipsum dolor sit amet.</h6>
                 </a>
                 <p class="mb-3 text-gray-500">
@@ -213,7 +213,7 @@
                     so far, in reverse chronological order.
                 </p>
 
-                <a href="#" class="inline-flex items-center px-6 py-3 btn-primary">
+                <a href="{{url('/about')}}" class="inline-flex items-center px-6 py-3 btn-primary">
                     Read more
                     <svg aria-hidden="true" class="ml-2 -mr-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20"
                         xmlns="http://www.w3.org/2000/svg">
@@ -245,7 +245,7 @@
                 For Zero Impact on the Atmosphere
             </p>
             <div class="flex justify-center">
-                <button type="button" class="btn-transparent">Read More</button>
+                <button type="button" class="btn-transparent" href="{{url('/about')}}">Read More</button>
             </div>
         </div>
     </div>
@@ -264,7 +264,7 @@
                 you need in a rapidly evolving marketplace.
             </p>
             <div>
-                <a class="px-6 py-3 btn-primary" href="/get-started">
+                <a class="px-6 py-3 btn-primary" href="{{url('/booking')}}">
                     Get Started
                 </a>
             </div>

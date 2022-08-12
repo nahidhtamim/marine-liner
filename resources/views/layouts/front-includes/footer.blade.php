@@ -17,27 +17,20 @@ class="p-4 bg-gradient-to-br from-sky-50 via-white to-sky-100 md:p-8 lg:p-10 bor
     class="flex flex-wrap justify-center items-center mb-6 text-gray-900"
   >
     <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6">About</a>
+      <a href="{{url('/')}}" class="mr-4 hover:underline md:mr-6">Home</a>
     </li>
     <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6">Premium</a>
+      <a href="{{url('/about')}}" class="mr-4 hover:underline md:mr-6">About</a>
     </li>
+
     <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6">Campaigns</a>
-    </li>
-    <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6">Blog</a>
-    </li>
-    <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6"
-        >Affiliate Program</a
-      >
+      <a href="{{url('/booking')}}" class="mr-4 hover:underline md:mr-6">Booking</a>
     </li>
     <li>
       <a href="#" class="mr-4 hover:underline md:mr-6">FAQs</a>
     </li>
     <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6">Contact</a>
+      <a href="{{url('/contact')}}" class="mr-4 hover:underline md:mr-6">Contact</a>
     </li>
   </ul>
   <span class="text-sm text-gray-500 sm:text-center"

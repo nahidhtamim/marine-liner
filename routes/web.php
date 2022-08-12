@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\PortController;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\ContainerController;
 use App\Http\Controllers\Admin\TrackingController;
+use App\Http\Controllers\Booking_TrackingController;
+use App\Http\Controllers\ContactController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,9 +30,27 @@ Route::get('/about', [HomeController::class, 'about']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/booking', [HomeController::class, 'booking']);
 Route::get('/tracking', [HomeController::class, 'tracking']);
+Route::post('getCntryPorts',[HomeController::class,'getCntryPorts'])->name('getCntryPorts');
+
+Route::get('refresh_captcha',[ContactController::class, 'refreshCaptcha'])->name('refresh_captcha');
+Route::post('/send-email', [ContactController::class, 'contactMail'])->name('contact.send');
 
 
 Auth::routes();
+
+Route::group(['middleware' => ['auth','verified']], function () {
+
+    Route::post('/make-booking', [Booking_TrackingController::class, 'make_booking']);
+    Route::get('/my-bookings', [Booking_TrackingController::class, 'my_bookings']);
+    Route::get('/tracking/{booking_id}', [Booking_TrackingController::class, 'track']);
+    // Route::get('/status', [HomeController::class, 'status'])->name('status');
+    // Route::get('/status/update', [HomeController::class, 'updateStatus'])->name('users.update.status');
+ 
+    // Route::get('/my-profile', [HomeController::class, 'myProfile'])->name('my-profile');
+    // Route::post('/update-details', [HomeController::class, 'updateDetails']);
+    // Route::post('/update-password', [HomeController::class, 'updatePassword']);
+ 
+ });
 
 Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
 

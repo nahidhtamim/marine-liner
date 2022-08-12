@@ -7,12 +7,12 @@ Dashboard | A Logistics Company
 @if (session('status'))
    <div class="alert alert-success" role="alert">
         {{ session('status') }}
-        <a class="close pull-right">&times;</a>
+        <a href="" class="close pull-right">&times;</a>
    </div>
 @elseif (session('warning'))
    <div class="alert alert-danger" role="alert">
         {{ session('warning') }}
-        <a class="close pull-right">&times;</a>
+        <a href="" class="close pull-right">&times;</a>
    </div>    
 @endif
 

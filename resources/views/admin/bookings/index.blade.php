@@ -49,8 +49,8 @@ Bookings | A Logistics Company
                     <tbody>
                         @foreach ($bookings as $booking)
                             <tr>
-                                <td>{{$booking->id}}</td>
-                                <td>{{$booking->tracking_id}} <a href="{{url('/trackings/'.$booking->tracking_id)}}" class="btn btn-primary btn-sm"> <i class="fa fa-eye"></i> </a></td>
+                                <td class="text-center">{{$booking->id}}</td>
+                                <td class="text-center">{{$booking->tracking_id}} <a href="{{url('/trackings/'.$booking->tracking_id)}}" class="btn btn-primary btn-sm"> <i class="fa fa-eye"></i> </a></td>
                                 <td>{{$booking->company_name}}</td>
                                 <td>{{$booking->company_address}}</td>
                                 <td>{{$booking->from_c->name}}</td>
