@@ -21,20 +21,20 @@
 <!-- Hero section start -->
 <section class="bg-center bg-cover bg-no-repeat" style="
           background-image: linear-gradient(#2440e222, #17151703),
-            url('https://images.unsplash.com/photo-1565891741441-64926e441838?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80');
+            url('frontend/assets/images/pavel-neznanov-mq86i1CEzr0-unsplash.jpg');
         ">
     <div class="max-w-screen-xl px-4 py-32 mx-auto lg:h-screen lg:items-center lg:flex">
         <div class="max-w-3xl py-20 px-12 rounded-2xl shadow-inner"
             style="background-image: linear-gradient(#334155b3, #334155b3)">
             <h1 class="text-3xl font-normal sm:text-5xl text-white">
-                Discover the Upside
+                We Are Marine Liner
 
-                <span class="sm:block"> with integrated logistics. </span>
+                <span class="sm:block"> We care for you. </span>
             </h1>
 
             <p class="max-w-xl text-white mx-auto mt-4 sm:leading-relaxed sm:text-xl">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt
-                illo tenetur fuga ducimus numquam ea!
+                MARINE LINER is a MALAYSIAN based, professional and financially
+sound company. It offers a powerful combination of strategic supply chain analysis and extensive practical experience, handling all shipping activities all over the world.
             </p>
 
             <div class="flex flex-wrap justify-start gap-4 mt-8">
@@ -51,10 +51,7 @@
         <!-- left -->
         <div class="space-y-6 flex flex-col justify-center order-last">
             <h2>Move your technology supply chain to the fast lane</h2>
-            <p>
-                Leveraging speed through supply chain integration, especially in
-                the time of disruption, can give you the crucial competitive edge
-                you need in a rapidly evolving marketplace.
+            <p>Keeping customer satisfaction in mind, we enable ourselves to keep up our standards in all aspects of shipping, where integrity, efficiency and professionalism are part of our goal. We adequately handle all shipping spectrum under one roof.
             </p>
             <div>
                 <a class="px-6 py-3 btn-primary" href="{{url('/booking')}}">
@@ -82,15 +79,14 @@
             url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
         ">
     <div class="space-y-6 flex items-center justify-center mx-auto flex-col wrapper">
-        <h2 class="text-center text-white font-bold">MARINE LINERBIOFUEL SOLUTION</h2>
+        <h2 class="text-center text-white font-bold">MARINE LINER</h2>
         <div class="border-b-4 border-blue-300 pb-4 w-20"></div>
 
         <p class="text-white text-center font-semibold">
-            From Ambition to Action: <br />
-            For Zero Impact on the Atmosphere
+            We are built on trust
         </p>
         <div class="flex justify-center">
-            <button type="button" href="{{url('/about')}}" class="btn-transparent">Read More</button>
+            <a href="{{url('/about')}}" class="btn-transparent">Read More</a>
         </div>
     </div>
 </div>
@@ -99,11 +95,9 @@
 <div class="wrapper space-y-16">
     <div class="flex justify-center">
         <div class="space-y-6 max-w-4xl text-center">
-            <h2>Move your technology supply chain to the fast lane</h2>
+            <h2>Move your dream with us, Marine Liner!!</h2>
             <p>
-                Leveraging speed through supply chain integration, especially in
-                the time of disruption, can give you the crucial competitive edge
-                you need in a rapidly evolving marketplace.
+                By focusing on delivering best-in-class service to our customers, we are always available to help you with your particular needs and offer you a one-stop-shop solution for your next shipping request.
             </p>
             <div>
                 <button type="button" {{url('/booking')}} class="px-6 py-3 btn-primary">
@@ -117,16 +111,15 @@
             class="shadow-md bg-gradient-to-r from-gray-50 hover:bg-blue-50 hover:cursor-pointer hover:-translate-y-3 transition duration-150 ease-in-out">
             <a href="#">
                 <img class="rounded-t-lg"
-                    src="https://www.maersk.com/~/media_sc9/maersk/solutions/transportation-services/images/transportation-services_illustration.svg?w=1000&hash=F68E778D455E2B30243A7458F0C2445C"
+                    src="{{asset('frontend/assets/images/john-simmons-U6zAZfaDuBY-unsplash.jpg')}}"
                     alt="" />
             </a>
             <div class="p-5">
                 <a href="#">
-                    <h6 class="mb-2">Lorem ipsum dolor sit amet.</h6>
+                    <h6 class="mb-2">On Time Delivery</h6>
                 </a>
                 <p class="mb-3 text-gray-500">
-                    Here are the biggest enterprise technology acquisitions of 2021
-                    so far, in reverse chronological order.
+                    We care about you and your time. We delivery your dream in due time.
                 </p>
 
                 <a href="{{url('/about')}}" class="inline-flex items-center px-6 py-3 btn-primary">
@@ -145,16 +138,15 @@
             class="shadow-md bg-gradient-to-r from-gray-50 hover:bg-blue-50 hover:cursor-pointer hover:-translate-y-3 transition duration-150 ease-in-out">
             <a href="{{url('/about')}}">
                 <img class="rounded-t-lg"
-                    src="https://www.maersk.com/~/media_sc9/maersk/solutions/transportation-services/images/transportation-services_illustration.svg?w=1000&hash=F68E778D455E2B30243A7458F0C2445C"
+                    src="{{asset('frontend/assets/images/fly-d-mT7lXZPjk7U-unsplash.jpg')}}"
                     alt="" />
             </a>
             <div class="p-5">
                 <a href="{{url('/about')}}">
-                    <h6 class="mb-2">Lorem ipsum dolor sit amet.</h6>
+                    <h6 class="mb-2">Secure Delivery</h6>
                 </a>
                 <p class="mb-3 text-gray-500">
-                    Here are the biggest enterprise technology acquisitions of 2021
-                    so far, in reverse chronological order.
+                    We Care about your security, we delivery your goods with utmost security.
                 </p>
 
                 <a href="{{url('/about')}}" class="inline-flex items-center px-6 py-3 btn-primary">
@@ -173,16 +165,15 @@
             class="shadow-md bg-gradient-to-r from-gray-50 hover:bg-blue-50 hover:cursor-pointer hover:-translate-y-3 transition duration-150 ease-in-out">
             <a href="{{url('/about')}}">
                 <img class="rounded-t-lg"
-                    src="https://www.maersk.com/~/media_sc9/maersk/solutions/transportation-services/images/transportation-services_illustration.svg?w=1000&hash=F68E778D455E2B30243A7458F0C2445C"
+                    src="{{asset('frontend/assets/images/rupixen-com-Q59HmzK38eQ-unsplash.jpg')}}"
                     alt="" />
             </a>
             <div class="p-5">
                 <a href="{{url('/about')}}">
-                    <h6 class="mb-2">Lorem ipsum dolor sit amet.</h6>
+                    <h6 class="mb-2">Security of Payment</h6>
                 </a>
                 <p class="mb-3 text-gray-500">
-                    Here are the biggest enterprise technology acquisitions of 2021
-                    so far, in reverse chronological order.
+                    We Provide you security against your payment. We are built on trust.
                 </p>
 
                 <a href="{{url('/about')}}" class="inline-flex items-center px-6 py-3 btn-primary">
@@ -201,16 +192,15 @@
             class="shadow-md bg-gradient-to-r from-gray-50 hover:bg-blue-50 hover:cursor-pointer hover:-translate-y-3 transition duration-150 ease-in-out">
             <a href="{{url('/about')}}">
                 <img class="rounded-t-lg"
-                    src="https://www.maersk.com/~/media_sc9/maersk/solutions/transportation-services/images/transportation-services_illustration.svg?w=1000&hash=F68E778D455E2B30243A7458F0C2445C"
+                    src="{{asset('frontend/assets/images/alex-kotliarskyi-QBpZGqEMsKg-unsplash.jpg')}}"
                     alt="" />
             </a>
             <div class="p-5">
                 <a href="{{url('/about')}}">
-                    <h6 class="mb-2">Lorem ipsum dolor sit amet.</h6>
+                    <h6 class="mb-2">Customer Support</h6>
                 </a>
                 <p class="mb-3 text-gray-500">
-                    Here are the biggest enterprise technology acquisitions of 2021
-                    so far, in reverse chronological order.
+                    We are always here for you to assist you with any query you might have.
                 </p>
 
                 <a href="{{url('/about')}}" class="inline-flex items-center px-6 py-3 btn-primary">
@@ -257,11 +247,15 @@
     <div class="grid md:grid-cols-2 space-y-6 md:space-y-0 gap-16">
         <!-- left -->
         <div class="space-y-6 flex flex-col justify-center">
-            <h2>Move your technology supply chain to the fast lane</h2>
+            <h2>Mission & Vision</h2>
             <p>
-                Leveraging speed through supply chain integration, especially in
-                the time of disruption, can give you the crucial competitive edge
-                you need in a rapidly evolving marketplace.
+                Our aim is to strive hard towards making and promoting “Marine Liner” as being the best forwarder in the industry in terms of service and profitability.
+            </p>
+            <p>
+                We are committed to strengthening our position as a leader in shipping and air forwarding, transport, cargo handling and expanding our full integrated global transport service through our overseas agents.
+            </p>
+            <p>
+                We are submitting there under supporting information of Marine Liner. strength for achieving our mission statement.
             </p>
             <div>
                 <a class="px-6 py-3 btn-primary" href="{{url('/booking')}}">

@@ -9,38 +9,16 @@
         <h1 class="text-sky-700">Mrine Line</h1>
 
         <p class="leading-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde a
-          vel excepturi sunt enim maiores eos quibusdam. Ab deserunt
-          doloribus fugiat. Ipsa dicta culpa quo commodi quae, non officia
-          pariatur aliquid exercitationem necessitatibus velit fuga corporis
-          adipisci sunt minima omnis. Magni, suscipit totam voluptas
-          reiciendis debitis assumenda, asperiores ducimus ad perspiciatis
-          dolorem est nulla, ex obcaecati officiis vitae mollitia
-          voluptatibus beatae consectetur quidem at. Qui nobis architecto
-          aliquam amet! Veritatis culpa incidunt similique quas tempora
-          pariatur in ab voluptatum alias eum, quia vel quos itaque
-          explicabo sunt, eos mollitia non!
+          MARINE LINER is a MALAYSIAN based, professional and financially
+sound company. It offers a powerful combination of strategic supply chain analysis and extensive practical experience, handling all shipping activities all over the world.
         </p>
 
         <p class="leading-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio
-          facere quibusdam est unde nesciunt officiis illo, et esse incidunt
-          magni odit maxime placeat vero temporibus voluptates cupiditate
-          non ut tempore iste dignissimos porro aperiam nulla sit? Vero
-          autem repudiandae, veritatis quos rem possimus fugit consequatur,
-          harum ratione sunt quo, delectus cupiditate ad labore itaque
-          accusamus similique velit! Nostrum, deleniti porro, quas a cum
-          tempora consectetur reprehenderit, aut libero architecto harum
-          eaque perspiciatis quos nam officiis quaerat suscipit eos sunt ex!
+          Keeping customer satisfaction in mind, we enable ourselves to keep up our standards in all aspects of shipping, where integrity, efficiency and professionalism are part of our goal. We adequately handle all shipping spectrum under one roof.
         </p>
 
         <p class="leading-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
-          possimus totam reiciendis nisi officia obcaecati, maiores cum eos,
-          laborum culpa dolore dolor nobis sequi eveniet, libero iusto.
-          Maiores tempore quia quam sapiente asperiores molestiae nesciunt
-          deserunt, iste enim repellendus tempora magnam sed neque ipsum
-          sequi dolorum provident! Ipsum, nihil ut.
+          By focusing on delivering best-in-class service to our customers, we are always available to help you with your particular needs and offer you a one-stop-shop solution for your next shipping request.
         </p>
       </div>
 
@@ -81,9 +59,9 @@
             alt="image"
           />
           <h3 class="font-semibold capitalize text-sky-700 mt-5">
-            Lorem ipsum dolor
+            John Doe
           </h3>
-          <h6 class="font-semibold">Founder & CEO Logistix</h6>
+          <h6 class="font-semibold">Founder & CEO</h6>
         </div>
       </div>
     </div>
@@ -107,11 +85,15 @@
           </svg>
         </div>
         <h3 class="font-semibold">Our Vision</h3>
-        <p class="leading-relaxed text-justify">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
-          animi velit, molestias perferendis accusantium optio nihil debitis
-          deleniti sed minus aperiam iure. Distinctio ex inventore dicta
-          placeat repu
+        <p class="leading-relaxed text-justify">         
+MARINE LINER, a company with a vision for dynamism in its field. Today
+MARINE LINER. is one of the fastest growing companies in Malaysia.
+A company with the prime objective of serving its clients with fast and secure deliveries and logistics
+services. MARINE LINER. is engaged in a variety of freight forwarding and total logistics solutions.
+Staffed with experienced personnel, the company strives to function as the most reliable service partner
+for its clients and is driven by a young energetic team of management and leaders. SLL is committed and
+focused to deliver a quality service. Therefore CUSTOMER SATISFACTION is SAIL's top priority.
+
         </p>
       </div>
       <!-- right  -->
@@ -134,11 +116,7 @@
         </div>
         <h3 class="font-semibold">Our Mission</h3>
         <p class="leading-relaxed text-justify">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Modi
-          animi velit, molestias perferendis accusantium optio nihil debitis
-          deleniti sed minus aperiam iure. Distinctio ex inventore dicta
-          placeat repudiandae, assumenda neque, ea similique nostrum sunt
-          nam dolorum?
+          We meet our customers’ demands for a personal and professional service by offering innovative supply chain solutions for global sea, air, and road transportation as wel as certain specialist services.
         </p>
       </div>
     </div>

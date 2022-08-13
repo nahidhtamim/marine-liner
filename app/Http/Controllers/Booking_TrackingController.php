@@ -42,10 +42,13 @@ class Booking_TrackingController extends Controller
         return view('my-bookings', compact('bookings'));
     }
 
+
     public function track($booking_id){
         $countries = Country::all();
         $trackings = Tracking::get()->where('booking_id', $booking_id);
         $booking = Booking::where('tracking_id', $booking_id)->first();
-        return view('tracking', compact('trackings', 'countries', 'booking_id', 'booking'));
+        return view('item-tracking', compact('trackings', 'countries', 'booking_id', 'booking'));
     }
+
+    
 }

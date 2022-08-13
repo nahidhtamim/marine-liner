@@ -30,6 +30,8 @@ Route::get('/about', [HomeController::class, 'about']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/booking', [HomeController::class, 'booking']);
 Route::get('/tracking', [HomeController::class, 'tracking']);
+Route::post('/track-booking', [HomeController::class, 'track_booking']);
+
 Route::post('getCntryPorts',[HomeController::class,'getCntryPorts'])->name('getCntryPorts');
 
 Route::get('refresh_captcha',[ContactController::class, 'refreshCaptcha'])->name('refresh_captcha');

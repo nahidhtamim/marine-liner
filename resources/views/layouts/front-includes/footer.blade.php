@@ -10,8 +10,7 @@ class="p-4 bg-gradient-to-br from-sky-50 via-white to-sky-100 md:p-8 lg:p-10 bor
     <img src="{{asset('frontend/assets/images/logo.png')}}" class="w-36" alt="" />
   </a>
   <p class="my-6 text-gray-500">
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi
-    perferendis enim atque
+    We Ship Your Dream For You.
   </p>
   <ul
     class="flex flex-wrap justify-center items-center mb-6 text-gray-900"
@@ -27,7 +26,7 @@ class="p-4 bg-gradient-to-br from-sky-50 via-white to-sky-100 md:p-8 lg:p-10 bor
       <a href="{{url('/booking')}}" class="mr-4 hover:underline md:mr-6">Booking</a>
     </li>
     <li>
-      <a href="#" class="mr-4 hover:underline md:mr-6">FAQs</a>
+      <a href="{{url('/tracking')}}" class="mr-4 hover:underline md:mr-6">Tracking</a>
     </li>
     <li>
       <a href="{{url('/contact')}}" class="mr-4 hover:underline md:mr-6">Contact</a>

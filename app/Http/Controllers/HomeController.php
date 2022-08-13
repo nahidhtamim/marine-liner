@@ -6,6 +6,7 @@ use App\Models\Booking;
 use App\Models\Container;
 use App\Models\Country;
 use App\Models\Port;
+use App\Models\Tracking;
 use Illuminate\Http\Request;
 use Mockery\Matcher\Contains;
 
@@ -25,6 +26,15 @@ class HomeController extends Controller
 
     public function tracking(){
         return view('tracking');
+    }
+
+
+    public function track_booking(Request $request){
+        $countries = Country::all();
+        $booking_id = $request->input('booking_id');
+        $trackings = Tracking::get()->where('booking_id', $booking_id);
+        $booking = Booking::where('tracking_id', $booking_id)->first();
+        return view('item-tracking', compact('trackings', 'countries', 'booking_id', 'booking'));
     }
 
     public function publication(){
