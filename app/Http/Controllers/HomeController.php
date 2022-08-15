@@ -24,19 +24,6 @@ class HomeController extends Controller
         return view('contact');
     }
 
-    public function tracking(){
-        return view('tracking');
-    }
-
-
-    public function track_booking(Request $request){
-        $countries = Country::all();
-        $booking_id = $request->input('booking_id');
-        $trackings = Tracking::get()->where('booking_id', $booking_id);
-        $booking = Booking::where('tracking_id', $booking_id)->first();
-        return view('item-tracking', compact('trackings', 'countries', 'booking_id', 'booking'));
-    }
-
     public function publication(){
         return view('publication');
     }
@@ -52,5 +39,27 @@ class HomeController extends Controller
     {
         $country_port=Port::where('country_id', $request->country_id)->orderBy('name')->get();
         return $country_port;
+    }
+
+
+
+    public function tracking(){
+        return view('tracking');
+    }
+
+    public function track_booking(Request $request){
+        $countries = Country::all();
+        $booking_id = $request->input('booking_id');
+        $trackings = Tracking::get()->where('booking_id', $booking_id);
+        $booking = Booking::where('tracking_id', $booking_id)->first();
+        return redirect('/tracking/'.$booking_id)->with( [ 'trackings' => $trackings, 'countries' => $countries, 'booking_id' => $booking_id, 'booking' => $booking ] );
+    }
+
+
+    public function track($booking_id){
+        $countries = Country::all();
+        $trackings = Tracking::get()->where('booking_id', $booking_id);
+        $booking = Booking::where('tracking_id', $booking_id)->first();
+        return view('item-tracking', compact('trackings', 'countries', 'booking_id', 'booking'));
     }
 }

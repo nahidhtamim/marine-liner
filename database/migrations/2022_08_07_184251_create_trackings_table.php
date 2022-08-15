@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('trackings', function (Blueprint $table) {
             $table->id();
             $table->string('booking_id');
-            $table->tinyInteger('current_country');
-            $table->tinyInteger('current_port');
+            $table->integer('current_country');
+            $table->integer('current_port');
             $table->tinyInteger('status')->default('0');
             $table->timestamps();
         });

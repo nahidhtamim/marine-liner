@@ -43,12 +43,7 @@ class Booking_TrackingController extends Controller
     }
 
 
-    public function track($booking_id){
-        $countries = Country::all();
-        $trackings = Tracking::get()->where('booking_id', $booking_id);
-        $booking = Booking::where('tracking_id', $booking_id)->first();
-        return view('item-tracking', compact('trackings', 'countries', 'booking_id', 'booking'));
-    }
+    
 
     
 }

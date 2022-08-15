@@ -18,10 +18,10 @@ return new class extends Migration
             $table->string('tracking_id')->unique();
             $table->string('company_name');
             $table->string('company_address');
-            $table->tinyInteger('from_country');
-            $table->tinyInteger('from_port');
-            $table->tinyInteger('destination_country');
-            $table->tinyInteger('destination_port');
+            $table->integer('from_country');
+            $table->integer('from_port');
+            $table->integer('destination_country');
+            $table->integer('destination_port');
             $table->tinyInteger('container_id');
             $table->date('booking_date');
             $table->string('goods');

@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('ports', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->tinyInteger('country_id');
+            $table->integer('country_id');
             $table->string('slug')->unique();
             $table->timestamps();
         });

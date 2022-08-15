@@ -30,7 +30,10 @@ Route::get('/about', [HomeController::class, 'about']);
 Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/booking', [HomeController::class, 'booking']);
 Route::get('/tracking', [HomeController::class, 'tracking']);
-Route::post('/track-booking', [HomeController::class, 'track_booking']);
+Route::post('find-booking', [HomeController::class, 'track_booking']);
+// Route::post('/track-booking', [HomeController::class, 'track_booking']);
+Route::get('/tracking/{booking_id}', [HomeController::class, 'track']);
+
 
 Route::post('getCntryPorts',[HomeController::class,'getCntryPorts'])->name('getCntryPorts');
 
@@ -44,7 +47,7 @@ Route::group(['middleware' => ['auth','verified']], function () {
 
     Route::post('/make-booking', [Booking_TrackingController::class, 'make_booking']);
     Route::get('/my-bookings', [Booking_TrackingController::class, 'my_bookings']);
-    Route::get('/tracking/{booking_id}', [Booking_TrackingController::class, 'track']);
+;
     // Route::get('/status', [HomeController::class, 'status'])->name('status');
     // Route::get('/status/update', [HomeController::class, 'updateStatus'])->name('users.update.status');
  

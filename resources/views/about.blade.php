@@ -6,7 +6,7 @@
     <div class="grid md:grid-cols-5 gap-14">
       <!-- left -->
       <div class="space-y-9 col-span-3 text-justify">
-        <h1 class="text-sky-700">Mrine Line</h1>
+        <h1 class="text-sky-700">Marine Line</h1>
 
         <p class="leading-6">
           MARINE LINER is a MALAYSIAN based, professional and financially

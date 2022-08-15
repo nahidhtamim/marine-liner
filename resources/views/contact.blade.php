@@ -15,7 +15,7 @@
     <div class="h-full text-gray-800">
         <div class="grid md:grid-cols-2 gap-12">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6509164.484029035!2d-123.79871656688789!3d37.193032687834986!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808fb9fe5f285e3d%3A0x8b5109a227086f55!2sCalifornia%2C%20USA!5e0!3m2!1sen!2sbd!4v1659074290813!5m2!1sen!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8170858156736!2d101.69790721522754!3d3.142938054066106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49d0e9850f8f%3A0x84ee5fabba2ee59a!2sRumah%20B%20P%2C%204%2C%20Jalan%20Hang%20Jebat%2C%20City%20Centre%2C%2050150%20Kuala%20Lumpur%2C%20Wilayah%20Persekutuan%20Kuala%20Lumpur%2C%20Malaysia!5e0!3m2!1sen!2sbd!4v1660597056629!5m2!1sen!2sbd"
                 style="border: 0" allowfullscreen="" class="w-full h-full min-h-[450px]" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                 @if (Session::has('message_sent'))
@@ -35,7 +35,7 @@
                         </label>
                         <input
                             class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="grid-password" type="text" placeholder="John Smith" name="name" required=""/>
+                            id="grid-password" type="text" name="name" required=""/>
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -46,7 +46,7 @@
                         </label>
                         <input
                             class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="grid-password" type="text" placeholder="Zero Tech Ltd." name="company_name" required=""/>
+                            id="grid-password" type="text" name="company_name" required=""/>
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -57,7 +57,7 @@
                         </label>
                         <input
                             class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="grid-password" type="email" placeholder="xyz@dimain.com" name="email" required=""/>
+                            id="grid-password" type="email" name="email" required=""/>
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -68,7 +68,7 @@
                         </label>
                         <input
                             class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            id="grid-password" type="tel" placeholder="0491 570 156" name="phone" required=""/>
+                            id="grid-password" type="tel" name="phone" required=""/>
                     </div>
                 </div>
 
@@ -81,7 +81,7 @@
 
                         <textarea id="content" rows="4"
                             class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                            placeholder="Your message..." name="content"></textarea>
+                             name="content"></textarea>
                     </div>
                 </div>
 
