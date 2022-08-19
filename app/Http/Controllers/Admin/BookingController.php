@@ -30,9 +30,10 @@ class BookingController extends Controller
 
     public function saveBooking(Request $request){
 
-        $tracking_id = Helper::trackingNumberGenerate(new Booking, 'tracking_id', 6, 'ML'); /** Generate Tracking Number */
+        $booking_id = Helper::trackingNumberGenerate(new Booking, 'booking_id', 6, 'ML'); /** Generate Tracking Number */
         $booking = new Booking();
-        $booking->tracking_id = $tracking_id;
+        $booking->booking_id = $booking_id;
+        $booking->tracking_id = $request->input('tracking_id');
         $booking->company_name = $request->input('company_name');
         $booking->company_address = $request->input('company_address');
         $booking->from_country = $request->input('from_country');
@@ -48,17 +49,18 @@ class BookingController extends Controller
         return redirect('/bookings')->with('status', 'Booking Added Successfully');
     }
 
-    public function editBooking($tracking_id){
+    public function editBooking($booking_id){
         $countries = Country::all();
         $ports = Port::all();
         $containers = Container::all();
-        $booking = Booking::where('tracking_id', $tracking_id)->first();
+        $booking = Booking::where('booking_id', $booking_id)->first();
         return view('admin.bookings.edit', compact('booking', 'countries', 'ports', 'containers'));
     }
 
-    public function updateBooking($tracking_id, Request $request){
+    public function updateBooking($booking_id, Request $request){
 
-        $booking = Booking::where('tracking_id', $tracking_id)->first();
+        $booking = Booking::where('booking_id', $booking_id)->first();
+        $booking->tracking_id = $request->input('tracking_id');
         $booking->company_name = $request->input('company_name');
         $booking->company_address = $request->input('company_address');
         $booking->from_country = $request->input('from_country');
@@ -73,11 +75,17 @@ class BookingController extends Controller
         return redirect('/bookings')->with('status', 'Booking Updated Successfully');
     }
 
-    public function deleteBooking($tracking_id){
-        $booking = Booking::where('tracking_id', $tracking_id)->first();
+    public function deleteBooking($booking_id){
+        $booking = Booking::where('booking_id', $booking_id)->first();
         $booking->delete();
         return redirect('/bookings')->with('warning', 'Booking Deleted Successfully');
     }
 
+    public function addTrackingId($booking_id, Request $request){
+        $booking = Booking::where('booking_id', $booking_id)->first();
+        $booking->tracking_id = $request->input('tracking_id');
+        $booking->update();
+        return redirect('/bookings')->with('status', 'Booking Updated Successfully');
+    }
 
 }

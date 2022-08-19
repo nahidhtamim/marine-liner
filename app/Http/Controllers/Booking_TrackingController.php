@@ -18,9 +18,9 @@ class Booking_TrackingController extends Controller
 
     public function make_booking(Request $request){
 
-        $tracking_id = Helper::trackingNumberGenerate(new Booking, 'tracking_id', 6, 'ML'); /** Generate Tracking Number */
+        $booking_id = Helper::trackingNumberGenerate(new Booking, 'booking_id', 6, 'ML'); /** Generate Tracking Number */
         $booking = new Booking();
-        $booking->tracking_id = $tracking_id;
+        $booking->booking_id = $booking_id;
         $booking->company_name = $request->input('company_name');
         $booking->company_address = $request->input('company_address');
         $booking->from_country = $request->input('from_country');

@@ -41,25 +41,46 @@ class HomeController extends Controller
         return $country_port;
     }
 
-
-
     public function tracking(){
         return view('tracking');
     }
 
     public function track_booking(Request $request){
         $countries = Country::all();
-        $booking_id = $request->input('booking_id');
-        $trackings = Tracking::get()->where('booking_id', $booking_id);
-        $booking = Booking::where('tracking_id', $booking_id)->first();
-        return redirect('/tracking/'.$booking_id)->with( [ 'trackings' => $trackings, 'countries' => $countries, 'booking_id' => $booking_id, 'booking' => $booking ] );
+        $tracking_id = $request->input('tracking_id');
+        $trackings = Tracking::get()->where('tracking_id', $tracking_id);
+        $booking = Booking::where('tracking_id', $tracking_id)->first();
+        return redirect('/tracking/'.$tracking_id)->with( [ 'trackings' => $trackings, 'countries' => $countries, 'booking_id' => $tracking_id, 'booking' => $booking ] );
     }
 
-
-    public function track($booking_id){
+    public function track($tracking_id){
         $countries = Country::all();
-        $trackings = Tracking::get()->where('booking_id', $booking_id);
-        $booking = Booking::where('tracking_id', $booking_id)->first();
-        return view('item-tracking', compact('trackings', 'countries', 'booking_id', 'booking'));
+        $trackings = Tracking::get()->where('tracking_id', $tracking_id);
+        $booking = Booking::where('tracking_id', $tracking_id)->first();
+        return view('item-tracking', compact('trackings', 'countries', 'tracking_id', 'booking'));
     }
+
+
+    public function ground(){
+        return view('services.ground');
+    }
+
+    public function logistics(){
+        return view('services.logistics');
+    }
+    public function ocean(){
+        return view('services.ocean');
+    }
+
+    public function storage(){
+        return view('services.storage');
+    }
+    public function trucking(){
+        return view('services.trucking');
+    }
+
+    public function warehousing(){
+        return view('services.warehousing');
+    }
+
 }

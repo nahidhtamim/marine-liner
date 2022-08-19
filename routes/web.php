@@ -31,11 +31,18 @@ Route::get('/contact', [HomeController::class, 'contact']);
 Route::get('/booking', [HomeController::class, 'booking']);
 Route::get('/tracking', [HomeController::class, 'tracking']);
 Route::post('find-booking', [HomeController::class, 'track_booking']);
+
 // Route::post('/track-booking', [HomeController::class, 'track_booking']);
 Route::get('/tracking/{booking_id}', [HomeController::class, 'track']);
 
-
 Route::post('getCntryPorts',[HomeController::class,'getCntryPorts'])->name('getCntryPorts');
+
+Route::get('/ground', [HomeController::class, 'ground']);
+Route::get('/logistics', [HomeController::class, 'logistics']);
+Route::get('/ocean', [HomeController::class, 'ocean']);
+Route::get('/storage', [HomeController::class, 'storage']);
+Route::get('/trucking', [HomeController::class, 'trucking']);
+Route::get('/warehousing', [HomeController::class, 'warehousing']);
 
 Route::get('refresh_captcha',[ContactController::class, 'refreshCaptcha'])->name('refresh_captcha');
 Route::post('/send-email', [ContactController::class, 'contactMail'])->name('contact.send');
@@ -85,17 +92,17 @@ Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
     // Containers Routes
     Route::get('/bookings', [BookingController::class, 'index']);
     Route::post('/save-booking', [BookingController::class, 'saveBooking']);
-    Route::get('/edit-booking/{tracking_id}', [BookingController::class, 'editBooking']);
-    Route::post('/update-booking/{tracking_id}', [BookingController::class, 'updateBooking']);
-    Route::get('/delete-booking/{tracking_id}', [BookingController::class, 'deleteBooking']);
+    Route::get('/edit-booking/{booking_id}', [BookingController::class, 'editBooking']);
+    Route::post('/update-booking/{booking_id}', [BookingController::class, 'updateBooking']);
+    Route::get('/delete-booking/{booking_id}', [BookingController::class, 'deleteBooking']);
     Route::post('getCountryPorts',[BookingController::class,'getCountryPorts'])->name('getCountryPorts');
     
     // Trackings Routes
-    Route::get('/trackings/{booking_id}', [TrackingController::class, 'index']);
+    Route::get('/trackings/{tracking_id}', [TrackingController::class, 'index']);
     Route::post('/save-tracking', [TrackingController::class, 'saveTracking']);
-    Route::get('/edit-tracking/{booking_id}', [TrackingController::class, 'editTracking']);
-    Route::post('/update-tracking/{booking_id}', [TrackingController::class, 'updateTracking']);
-    Route::get('/delete-tracking/{booking_id}', [TrackingController::class, 'deleteTracking']);
+    Route::get('/edit-tracking/{tracking_id}', [TrackingController::class, 'editTracking']);
+    Route::post('/update-tracking/{tracking_id}', [TrackingController::class, 'updateTracking']);
+    Route::get('/delete-tracking/{tracking_id}', [TrackingController::class, 'deleteTracking']);
 
     // Route::get('/services', [CountryController::class, 'index']);
     // Route::get('/add-service', [CountryController::class, 'addService']);

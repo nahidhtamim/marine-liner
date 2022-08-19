@@ -54,12 +54,12 @@ sound company. It offers a powerful combination of strategic supply chain analys
       >
         <div class="text-center">
           <img
-            src="{{asset('frontend/assets/images/Avatar_poe84it.png')}}"
-            class="rounded-full w-80 h-80 object-cover shadow-lg ring-4 ring-sky-500"
+            src="{{asset('frontend/assets/images/ceo.jpg')}}"
+            class="rounded-full w-80 h-120 object-cover shadow-lg ring-4 ring-sky-500"
             alt="image"
           />
           <h3 class="font-semibold capitalize text-sky-700 mt-5">
-            John Doe
+            James Barnes
           </h3>
           <h6 class="font-semibold">Founder & CEO</h6>
         </div>

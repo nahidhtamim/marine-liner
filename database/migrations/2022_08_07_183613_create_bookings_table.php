@@ -15,7 +15,8 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
-            $table->string('tracking_id')->unique();
+            $table->string('booking_id')->unique();
+            $table->string('tracking_id')->unique()->nullable();
             $table->string('company_name');
             $table->string('company_address');
             $table->integer('from_country');

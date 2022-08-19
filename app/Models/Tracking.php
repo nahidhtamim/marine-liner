@@ -12,7 +12,7 @@ class Tracking extends Model
     protected $table = 'trackings';
 
     protected $fillable = [
-        'booking_id',
+        'tracking_id',
         'current_country',
         'current_port',
         'status',
