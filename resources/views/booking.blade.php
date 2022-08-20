@@ -141,7 +141,7 @@
                     @endif
             </form>
             <div class="flex justify-center items-center">
-                <img src="{{asset('frontend/assets/images/example-7.svg')}}" class="w-full order-first md:order-last"
+                <img class="rounded-lg object-cover shadow-lg ring-4 ring-sky-500" src="{{asset('frontend/assets/images/booking.jpg')}}" class="w-full order-first md:order-last"
                     alt="bg-image" />
             </div>
         </div>

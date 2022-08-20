@@ -34,9 +34,9 @@
                         <li>
                           <a href="{{url('/my-bookings')}}" class="block py-2 px-4 hover:bg-gray-100">Your Bookings</a>
                         </li>
-                        {{-- <li>
-                          <a href="#" class="block py-2 px-4 hover:bg-gray-100">Tracking</a>
-                        </li> --}}
+                        <li>
+                          <a href="{{url('/change-password')}}" class="block py-2 px-4 hover:bg-gray-100">Change Password</a>
+                        </li>
                       </ul>
                       <div class="py-1">
                         <a href="{{ route('logout') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="event.preventDefault();
@@ -157,9 +157,9 @@
                         <li>
                           <a href="{{url('/my-bookings')}}" class="block py-2 px-4 hover:bg-gray-100">Your Bookings</a>
                         </li>
-                        {{-- <li>
-                          <a href="{{url('/tracking/'.)}}" class="block py-2 px-4 hover:bg-gray-100">Tracking</a>
-                        </li> --}}
+                        <li>
+                          <a href="{{url('/change-password')}}" class="block py-2 px-4 hover:bg-gray-100">Change Password</a>
+                        </li>
                       </ul>
                       <div class="py-1">
                         <a href="{{ route('logout') }}" class="block py-2 px-4 text-sm text-gray-700 hover:bg-gray-100" onclick="event.preventDefault();

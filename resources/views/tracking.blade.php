@@ -48,19 +48,14 @@
               <div class="w-full px-3">
                 <label
                   class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                  for="grid-password"
-                >
+                  for="grid-password">
                   Please Enter Tracking No...
                 </label>
                 <input
                   class="appearance-none block w-full bg-gray-50 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                   id="grid-password"
                   type="text" name="booking_id"
-                  placeholder="ML-000001" >
-                <span class="text-gray-500 text-xs leading-none -mt-4"
-                  >please enter as following <br>
-                  'ML-000001, ML-000002, ML-000003'</span
-                >
+                  placeholder="Please Enter Tracking Number" >
               </div>
             </div>
 

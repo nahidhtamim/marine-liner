@@ -70,12 +70,7 @@
       <div class="grid md:grid-cols-2 gap-12">
           <div class="flex justify-center items-center md:order-last">
               <div class="bg-gradient-to-br from-sky-700 to-sky-500 p-11 rounded-full shadow-inner drop-shadow-md">
-                  <svg xmlns="http://www.w3.org/2000/svg" class="h-60 w-60 order-first md:order-last text-white"
-                      fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                      <path stroke-linecap="round" stroke-linejoin="round"
-                          d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
+                  <img src="{{asset('frontend/assets/images/icons8-booking-64.png')}}" alt="">
               </div>
           </div>
           <div class="flex items-center">

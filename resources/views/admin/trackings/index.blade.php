@@ -44,20 +44,21 @@ Trackings | A Logistics Company
                     <tbody>
                         @foreach ($trackings as $tracking)
                             <tr>
-                                <td>{{$tracking->id}}</td>
-                                <td>{{$tracking->booking_id}}</td>
+                                <td>{{$loop->iteration}}</td>
+                                <td>{{$tracking->tracking_id}}</td>
                                 <td>{{$tracking->country_info->name}}</td>
                                 <td>{{$tracking->port_info->name}}</td>
                                 <td>
                                     @if($tracking->status == 0)
-                                        Active
+                                        <span class="text-success"> <b>Active</b> 
+                                            <a href="{{url('/tacking-complete/'.$tracking->id)}}" class="btn btn-info btn-sm"> Complete </a> </span>
                                     @else
-                                        Completed
+                                        <span class="text-info"> <b>Complete</b> </span>
                                     @endif
                                 </td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="{{url('/edit-tracking/'.$tracking->booking_id)}}" class="btn btn-primary">Edit</a>
+                                        <a href="{{url('/edit-tracking/'.$tracking->id)}}" class="btn btn-primary">Edit</a>
                                         <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#sureModal">Delete</a>
                                     </div>
 
@@ -102,9 +103,9 @@ Trackings | A Logistics Company
                         @csrf
                         <div class="row">
                             <div class="col-12 mb-3 mb-sm-0">
-                                <label for="booking_id" class="text-primary"> <b>Booking Id <span class="text-danger">*</span></b> </label>
-                                <input type="text" name="booking_id" class="form-control @error('booking_id') is-invalid @enderror" id="booking_id"
-                                    value="{{$booking_id}}"  readonly>  
+                                <label for="tracking_id" class="text-primary"> <b>Booking Id <span class="text-danger">*</span></b> </label>
+                                <input type="text" name="tracking_id" class="form-control @error('tracking_id') is-invalid @enderror" id="tracking_id"
+                                    value="{{$tracking_id}}"  readonly>  
                                 <br>
                             </div>
 

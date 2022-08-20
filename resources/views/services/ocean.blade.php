@@ -36,7 +36,6 @@
             <h2>Ocean Freight Transportation Services</h2>
             <p>
                 Consistent, reliable sailings ensure that your ocean freight shipments always reach your customers in a timely manner.
-                <br>
                 <h4>Our ocean freight services include:</h4>
             </p>
             <p>
@@ -87,7 +86,7 @@
         </div>
         <!-- right -->
         <div class="">
-            <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
+            <img src="{{asset('frontend/assets/images/services/ocean.jpg')}}"
                 alt="background-image" class="shadow-xl rounded-xl object-cover" />
         </div>
     </div>

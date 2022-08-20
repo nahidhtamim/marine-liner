@@ -8,7 +8,7 @@
     <link rel="apple-touch-icon" href="{{asset('frontend/assets/images/logo.ico')}}">
     <link rel="shortcut icon" type="image/x-icon" href="{{asset('frontend/assets/images/logo.ico')}}">
 
-    <title>Marine Liner</title>
+    <title>Shipping Company | Marine Liner</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link

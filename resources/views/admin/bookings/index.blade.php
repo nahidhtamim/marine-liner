@@ -34,36 +34,63 @@ Bookings | A Logistics Company
                     <thead>
                         <tr>
                             <th>Sl.</th>
+                            <th>Booking Id</th>
                             <th>Tracking Id</th>
                             <th>Company Name</th>
                             <th>Company Address</th>
-                            <th>From booking</th>
-                            <th>From Port</th>
-                            <th>Destination booking</th>
-                            <th>Destination Port</th>
+                            <th>From</th>
+                            <th>Destination</th>
                             <th>Container</th>
                             <th>Goods</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($bookings as $booking)
                             <tr>
-                                <td class="text-center">{{$booking->id}}</td>
-                                <td class="text-center">{{$booking->tracking_id}} <a href="{{url('/trackings/'.$booking->tracking_id)}}" class="btn btn-primary btn-sm"> <i class="fa fa-eye"></i> </a></td>
+                                <td class="text-center">{{$loop->iteration}}</td>
+                                <td class="text-center">{{$booking->booking_id}}</td>
+                                <td class="text-center">
+                                    @if($booking->tracking_id == null)
+                                    <form class="form-inline" method="POST" action="{{url('/add-tracking/'.$booking->booking_id)}}">
+                                        @csrf
+                                        <div class="row">
+                                            <div class="col-md-9">
+                                                <input type="text" class="form-control" name="tracking_id" placeholder="Tracking ID">
+                                            </div>
+                                            <div class="col-md-3">
+                                                <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-plus"></i></button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    @else
+                                        {{$booking->tracking_id}} 
+                                        <a href="{{url('/trackings/'.$booking->tracking_id)}}" class="btn btn-primary btn-sm"> <i class="fa fa-eye"></i> </a>
+                                    @endif
+                                </td>
                                 <td>{{$booking->company_name}}</td>
                                 <td>{{$booking->company_address}}</td>
-                                <td>{{$booking->from_c->name}}</td>
-                                <td>{{$booking->from_p->name}}</td>
-                                <td>{{$booking->destination_c->name}}</td>
-                                <td>{{$booking->destination_p->name}}</td>
+                                <td>{{$booking->from_p->name}}, {{$booking->from_c->name}}</td>
+                                <td>{{$booking->destination_p->name}}, {{$booking->destination_c->name}}</td>
                                 <td>{{$booking->container_info->name}}</td>
                                 <td>{{$booking->goods}}</td>
                                 <td>
+                                    @if($booking->status == 0)
+                                        <span class="text-warning"> <b>On Hold</b> 
+                                        <a href="{{url('/mark-active/'.$booking->booking_id)}}" class="btn btn-success btn-sm"> Active </a> </span>
+                                    @elseif($booking->status == 1)
+                                        <span class="text-success"> <b>Active</b> 
+                                            <a href="{{url('/mark-complete/'.$booking->booking_id)}}" class="btn btn-info btn-sm"> Complete </a> </span>
+                                    @else
+                                        <span class="text-info"> <b>Complete</b> </span>
+                                    @endif
+                                </td>
+                                <td>
                                     <div class="btn-group">
-                                        <a href="{{url('/edit-booking/'.$booking->tracking_id)}}" class="btn btn-primary">Edit</a>
+                                        <a href="{{url('/edit-booking/'.$booking->booking_id)}}" class="btn btn-sm btn-primary">Edit</a>
                                         {{-- <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#sureModal">Delete</a> --}}
-                                        <a href="{{url('/delete-booking/'.$booking->tracking_id)}}" class="btn btn-danger">Delete</a>
+                                        <a href="{{url('/delete-booking/'.$booking->booking_id)}}" class="btn btn-sm btn-danger">Delete</a>
                                     </div>
 
                                         <!-- Are You Sure Modal-->

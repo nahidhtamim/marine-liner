@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ContainerController;
 use App\Http\Controllers\Admin\TrackingController;
 use App\Http\Controllers\Booking_TrackingController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\FrontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,8 +59,8 @@ Route::group(['middleware' => ['auth','verified']], function () {
     // Route::get('/status', [HomeController::class, 'status'])->name('status');
     // Route::get('/status/update', [HomeController::class, 'updateStatus'])->name('users.update.status');
  
-    // Route::get('/my-profile', [HomeController::class, 'myProfile'])->name('my-profile');
-    // Route::post('/update-details', [HomeController::class, 'updateDetails']);
+    Route::get('/change-password', [FrontendController::class, 'change_password']);
+    Route::post('/confirm-password', [FrontendController::class, 'confirm_password']);
     // Route::post('/update-password', [HomeController::class, 'updatePassword']);
  
  });
@@ -67,7 +68,8 @@ Route::group(['middleware' => ['auth','verified']], function () {
 Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
 
     Route::get('/dashboard', [DashboardController::class, 'index']);
- 
+    Route::post('/update-password', [DashboardController::class, 'update_password']);
+
     // Countries Routes
     Route::get('/countries', [CountryController::class, 'index']);
     Route::post('/save-country', [CountryController::class, 'saveCountry']);
@@ -89,20 +91,25 @@ Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
     Route::post('/update-container/{slug}', [ContainerController::class, 'updateContainer']);
     Route::get('/delete-container/{slug}', [ContainerController::class, 'deleteContainer']);
 
-    // Containers Routes
+    // Bookings Routes
     Route::get('/bookings', [BookingController::class, 'index']);
     Route::post('/save-booking', [BookingController::class, 'saveBooking']);
     Route::get('/edit-booking/{booking_id}', [BookingController::class, 'editBooking']);
     Route::post('/update-booking/{booking_id}', [BookingController::class, 'updateBooking']);
     Route::get('/delete-booking/{booking_id}', [BookingController::class, 'deleteBooking']);
     Route::post('getCountryPorts',[BookingController::class,'getCountryPorts'])->name('getCountryPorts');
+    Route::post('/add-tracking/{booking_id}', [BookingController::class, 'addTrackingId']);
+    Route::get('/mark-active/{booking_id}', [BookingController::class, 'markActive']);
+    Route::get('/mark-complete/{booking_id}', [BookingController::class, 'markComplete']);
+
     
     // Trackings Routes
     Route::get('/trackings/{tracking_id}', [TrackingController::class, 'index']);
     Route::post('/save-tracking', [TrackingController::class, 'saveTracking']);
-    Route::get('/edit-tracking/{tracking_id}', [TrackingController::class, 'editTracking']);
-    Route::post('/update-tracking/{tracking_id}', [TrackingController::class, 'updateTracking']);
-    Route::get('/delete-tracking/{tracking_id}', [TrackingController::class, 'deleteTracking']);
+    Route::get('/edit-tracking/{id}', [TrackingController::class, 'editTracking']);
+    Route::post('/update-tracking/{id}', [TrackingController::class, 'updateTracking']);
+    Route::get('/delete-tracking/{id}', [TrackingController::class, 'deleteTracking']);
+    Route::get('/tacking-complete/{id}', [TrackingController::class, 'tackingComplete']);
 
     // Route::get('/services', [CountryController::class, 'index']);
     // Route::get('/add-service', [CountryController::class, 'addService']);

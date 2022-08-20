@@ -122,13 +122,13 @@
           </div>
         </div>
         <!--tracking detail end -->
-        @if($booking_id != null)
+        @if($tracking_id != null)
         <!-- tracking label start -->
         <div class="flex border flex-col md:flex-row py-3">
             <div class="flex items-center">
                 <div class="py-2 px-4 md:border-r-2">
                     <p class="text-xs text-gray-500">Tracking No</p>
-                    <h6 class="font-semibold">{{$booking_id}}</h6>
+                    <h6 class="font-semibold">{{$tracking_id}}</h6>
                 </div>
             </div>
             {{-- <div class="flex items-center">

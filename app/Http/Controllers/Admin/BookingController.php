@@ -88,4 +88,18 @@ class BookingController extends Controller
         return redirect('/bookings')->with('status', 'Booking Updated Successfully');
     }
 
+    public function markActive($booking_id, Request $request){
+        $booking = Booking::where('booking_id', $booking_id)->first();
+        $booking->status = '1';
+        $booking->update();
+        return redirect('/bookings')->with('status', 'Booking Status Updated Successfully');
+    }
+
+    public function markComplete($booking_id, Request $request){
+        $booking = Booking::where('booking_id', $booking_id)->first();
+        $booking->status = '2';
+        $booking->update();
+        return redirect('/bookings')->with('status', 'Booking Status Updated Successfully');
+    }
+
 }

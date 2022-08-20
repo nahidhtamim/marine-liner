@@ -46,12 +46,12 @@
                     </div>
 
                     <button type="submit" class="btn-primary">Login</button>
-                    <br>
+                    {{-- <br>
                     @if (Route::has('password.request'))
                     <a class="btn text-xs" href="{{ route('password.request') }}">
                         {{ __('Forgot Your Password?') }}
                     </a>
-                    @endif
+                    @endif --}}
                 </form>
             </div>
         </div>

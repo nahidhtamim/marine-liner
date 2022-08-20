@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Country;
+use App\Models\Port;
 use App\Models\Tracking;
 use Illuminate\Http\Request;
 
@@ -27,33 +28,34 @@ class TrackingController extends Controller
     
     }
 
-    public function editTracking($tracking_id){
+    public function editTracking($id){
         $countries = Country::all();
-        $tracking = Tracking::where('tracking_id', $tracking_id)->first();
-        return view('admin.trackings.edit', compact('tracking', 'countries'));
+        $ports = Port::all();
+        $tracking = Tracking::where('id', $id)->first();
+        return view('admin.trackings.edit', compact('tracking', 'countries', 'ports'));
     }
 
-    public function updateTracking($tracking_id, Request $request){
+    public function updateTracking($id, Request $request){
 
-        $tracking = Tracking::where('tracking_id', $tracking_id)->first();
+        $tracking = Tracking::where('id', $id)->first();
         $tracking->current_country = $request->input('current_country');
         $tracking->current_port = $request->input('current_port');
-        $tracking->status = $request->input('status');
         $tracking->update();
-        return redirect('/trackings/'.$tracking_id)->with('status', 'tracking Updated Successfully');
+        return redirect('/trackings/'.$tracking->tracking_id)->with('status', 'Tracking Updated Successfully');
     
     }
 
-    public function deleteTracking($tracking_id){
-        $tracking = Tracking::where('tracking_id', $tracking_id)->first();
+    public function deleteTracking($id){
+        $tracking = Tracking::where('id', $id)->first();
         $tracking->delete();
-        return redirect('/trackings/'.$tracking_id)->with('warning', 'tracking Deleted Successfully');
+        return redirect()->back()->with('warning', 'Tracking Deleted Successfully');
     }
 
-    public function markComplate($tracking_id, Request $request){
-        $tracking = Tracking::where('tracking_id', $tracking_id)->first();
+    public function tackingComplete($id){
+        $tracking = Tracking::where('id', $id)->first();
         $tracking->status = '1';
         $tracking->update();
-        return redirect('/trackings/'.$tracking_id)->with('status', 'tracking Updated Successfully');
+        return redirect()->back()->with('status', 'Tracking Status Updated Successfully');
     }
+
 }

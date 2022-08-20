@@ -41,9 +41,5 @@ class Booking_TrackingController extends Controller
         $bookings = Booking::get()->where('user_id', Auth::user()->id);
         return view('my-bookings', compact('bookings'));
     }
-
-
-    
-
     
 }

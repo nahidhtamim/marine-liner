@@ -24,7 +24,7 @@ class Tracking extends Model
     }
     public function port_info()
     {
-        return $this->belongsTo(Country::class,'current_port','id');
+        return $this->belongsTo(Port::class,'current_port','id');
     }
 
 }

@@ -29,10 +29,23 @@ Edit Booking | A Logistics Company
             <h6 class="m-0 font-weight-bold text-primary">Bookings List</h6>
         </div>
         <div class="card-body">
-            <form class="user" action="{{url('/update-booking/'.$booking->tracking_id)}}" method="POST" enctype="multipart/form-data">
+            <form class="user" action="{{url('/update-booking/'.$booking->booking_id)}}" method="POST" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row">
+
+                    <div class="col-12 mb-3 mb-sm-0">
+                        <label for="tracking_id" class="text-primary"> <b>Tracking ID <span class="text-danger">*</span></b> </label>
+                        <input type="text" name="tracking_id" class="form-control @error('tracking_id') is-invalid @enderror" id="tracking_id"
+                            value="{{$booking->tracking_id}}" required="">
+                            <span class="text-danger">
+                                @error('tracking_id')
+                                    <p class="text-danger">{{$message}}</p> 
+                                @enderror
+                            </span>   
+                        <br>
+                    </div>
+
                     <div class="col-6 mb-3 mb-sm-0">
                         <label for="company_name" class="text-primary"> <b>Company Name <span class="text-danger">*</span></b> </label>
                         <input type="text" name="company_name" class="form-control @error('company_name') is-invalid @enderror" id="company_name"
@@ -103,7 +116,7 @@ Edit Booking | A Logistics Company
                         <br>
                     </div>
 
-                    <div class="col-12 mb-3 mb-sm-0">
+                    <div class="col-6 mb-3 mb-sm-0">
                         <label for="container_id" class="text-primary"> <b>Container Type <span class="text-danger">*</span></b> </label>
                         <select name="container_id" id="container_id" required="" class="form-control @error('container_id') is-invalid @enderror">
                             <option value="{{$booking->container_id}}">{{$booking->container_info->name}}</option>
@@ -114,7 +127,7 @@ Edit Booking | A Logistics Company
                         <br>
                     </div>
 
-                    <div class="col-12 mb-3 mb-sm-0">
+                    <div class="col-6 mb-3 mb-sm-0">
                         <label for="booking_date" class="text-primary"> <b>Booking Date <span class="text-danger">*</span></b> </label>
                         <input type="date" name="booking_date" class="form-control @error('booking_date') is-invalid @enderror" id="booking_date" required="" value="{{$booking->booking_date}}">   
                         <br>
