@@ -38,6 +38,7 @@ Trackings | A Logistics Company
                             <th>Country</th>
                             <th>Port</th>
                             <th>Status</th>
+                            <th>Created At</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -50,16 +51,23 @@ Trackings | A Logistics Company
                                 <td>{{$tracking->port_info->name}}</td>
                                 <td>
                                     @if($tracking->status == 0)
-                                        <span class="text-success"> <b>Active</b> 
-                                            <a href="{{url('/tacking-complete/'.$tracking->id)}}" class="btn btn-info btn-sm"> Complete </a> </span>
-                                    @else
-                                        <span class="text-info"> <b>Complete</b> </span>
+                                        <span class="text-secondary"> <b>Booked</b> 
+                                        <a href="{{url('/tracking-departed/'.$tracking->id)}}" class="btn btn-info btn-sm"> Mark Departed </a> </span>
+                                    @elseif($tracking->status == 1)
+                                        <span class="text-info"> <b>Departed</b> 
+                                            <a href="{{url('/tracking-active/'.$tracking->id)}}" class="btn btn-warning btn-sm"> Mark On Hold </a> </span>
+                                    @elseif($tracking->status == 2)
+                                        <span class="text-warning"> <b>On Hold</b> 
+                                        <a href="{{url('/tracking-complete/'.$tracking->id)}}" class="btn btn-success btn-sm"> Mark Complete </a> </span>
+                                    @elseif($tracking->status == 3)
+                                        <span class="text-success"> <b>Completed</b> </span>
                                     @endif
                                 </td>
+                                <td>{{$tracking->created_at}}</td>
                                 <td>
                                     <div class="btn-group">
                                         <a href="{{url('/edit-tracking/'.$tracking->id)}}" class="btn btn-primary">Edit</a>
-                                        <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#sureModal">Delete</a>
+                                        <a class="btn btn-danger" href="{{url('/delete-tracking/'.$tracking->id)}}">Delete</a>
                                     </div>
 
                                     <!-- Are You Sure Modal-->
@@ -140,9 +148,11 @@ Trackings | A Logistics Company
                             <div class="col-12 mb-3 mb-sm-0">
                                 <label for="status" class="text-primary"> <b>Status <span class="text-danger">*</span></b> </label>
                                 <select name="status" id="status" required="" class="form-control @error('status') is-invalid @enderror">
-                                    <option>Select A Port</option>
-                                    <option value="0">Active</option>
-                                    <option value="1">Complete</option>
+                                    <option>Select Status</option>
+                                    <option value="0">Booked</option>
+                                    <option value="1">Departed</option>
+                                    <option value="2">On Hold</option>
+                                    <option value="3">Complete</option>
                                 </select>  
                                 <br>
                             </div>

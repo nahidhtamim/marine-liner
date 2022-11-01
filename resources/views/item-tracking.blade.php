@@ -167,15 +167,23 @@
                       <td class="py-4 px-6 whitespace-nowrap">{{$tracking->country_info->name}}</td>
                       <td class="py-4 px-6 whitespace-nowrap">{{$tracking->port_info->name}}</td>
                       <td class="py-4 px-6 whitespace-nowrap">
-                          @if($tracking->status == '0')
-                          <span class="whitespace-nowrap py-1 px-2 bg-blue-50 rounded-md font-semibold text-green-500 text-xs">
-                              Active
-                          </span>
-                          @else
-                          <span class="whitespace-nowrap py-1 px-2 bg-blue-50 rounded-md font-semibold text-blue-500 text-xs">
-                              Completed
-                          </span>
-                          @endif
+                            @if($tracking->status == '0')
+                            <span class="whitespace-nowrap py-1 px-2 bg-blue-50 rounded-md font-semibold text-yellow-500 text-xs">
+                                Booked
+                            </span>
+                            @elseif($tracking->status == '1')
+                            <span class="whitespace-nowrap py-1 px-2 bg-blue-50 rounded-md font-semibold text-green-500 text-xs">
+                                Departed
+                            </span>
+                            @elseif($tracking->status == '2')
+                            <span class="whitespace-nowrap py-1 px-2 bg-blue-50 rounded-md font-semibold text-green-500 text-xs">
+                                On Hold
+                            </span>
+                            @else
+                            <span class="whitespace-nowrap py-1 px-2 bg-blue-50 rounded-md font-semibold text-blue-500 text-xs">
+                                Completed
+                            </span>
+                            @endif
                       </td>
                   </tr>
                   @endforeach
@@ -187,12 +195,10 @@
         </p>
         @else
             <!-- tracking label start -->
-        <div class="flex border flex-col md:flex-row py-3">
-            <div class="flex items-center">
-                <div class="py-2 px-4 md:border-r-2">
-                    <h6 class="font-semibold">No Tracking Yet</h6>
-                </div>
-            </div>
+        <div class="">
+          <p class="text-red-600 text-sm italic text-center">
+            No Booking Yet!!!
+        </p>
         </div>
         <!-- tracking label end -->
         @endif

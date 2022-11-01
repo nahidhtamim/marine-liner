@@ -28,13 +28,12 @@
     </div>
 </div>
 
-<!-- Intro start -->
-<div class="wrapper pb-0">
-    <div class="grid md:grid-cols-2 space-y-6 md:space-y-0 gap-16">
+
+<div class="wrapper space-y-14">
+    <div class="grid md:grid-cols-1 lg:grid-cols-2 space-y-6 pb-3 lg:space-y-0 gap-16">
         <!-- left -->
         <div class="space-y-6 flex flex-col justify-center order-last">
             <h2>Ground Services</h2>
-
             <h5>Road & rail transport</h5>
             <p>Our professionals match your freight with the right vehicle and the right route, with the ability to restructure resources if conditions change. We drive the process from end-to-end while providing a custom solution to meet your needs.
                 <br>
@@ -50,7 +49,17 @@
                     <li>Smart way certified (usa)</li>
                 </ul> 
             </p>
-            <h5>Less-than truck load (ltl) – finding savings in your transportation patterns</h5>
+
+
+        </div>
+        <!-- right -->
+        <div>
+            <img src="{{asset('frontend/assets/images/services/ground.jpg')}}" alt="background-image"
+                class="shadow-xl rounded-xl object-cover w-full" />
+        </div>
+    </div>
+    <div>
+        <h5>Less-than truck load (ltl) – finding savings in your transportation patterns</h5>
             <p>Managing your loads through our ltl service is the perfect way to optimize your domestic supply chain. Logistics offers co-load and consolidation ltl services to reduce your cost and improve your distribution pipeline.
                 Bringing experience, creativity and insight to your less-than-truckload shipping challenges, we step in to coordinate and add value at every turn. <b>Services include: </b>               
                 <br>
@@ -65,22 +74,16 @@
                     <li>Customized customer portals</li>
                 </ul> 
             </p>
+            <br>
             <h5>Rail services</h5>
             <p>The rail industry has developed new levels of efficiency, economy and sustainability that can translate directly to your own supply chain. Our relationships with rail operators together with our expertise in rail and intermodal freight movement, means we are able to offer highly effective transportation solutions. All backed up by our supporting services, such as customs clearance, terminal handling, inland distribution and final mile delivery.
-            </p>
-            <div>
-                <a class="px-6 py-3 btn-primary" href="{{url('/contact')}}">
-                    Contact For More Info
-                </a>
-            </div>
-        </div>
-        <!-- right -->
-        <div class="">
-            <img src="{{asset('frontend/assets/images/services/ground.jpg')}}"
-                alt="background-image" class="shadow-xl rounded-xl object-cover" />
-        </div>
+            </p><br>
+            <a class="px-6 mt-5 py-3 btn-primary" href="{{url('/contact')}}">
+                Contact For More Info
+            </a>
+            
     </div>
+    
 </div>
-<!-- Intro end -->
 
 @endsection

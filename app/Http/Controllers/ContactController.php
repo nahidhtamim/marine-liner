@@ -28,7 +28,7 @@ class ContactController extends Controller
             'content' => $request->content,
         ];
 
-        Mail::to('forfreelancing101@gmail.com')->send(new ContactMail($details));
+        Mail::to('info@marine-liner.com')->send(new ContactMail($details));
         return redirect()->back()->with('message_sent', 'Your Mail Has Been Sent');
 
     }

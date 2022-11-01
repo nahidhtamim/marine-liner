@@ -43,6 +43,8 @@ Bookings | A Logistics Company
                             <th>Container</th>
                             <th>Goods</th>
                             <th>Status</th>
+                            <th>Booking Date</th>
+                            <th>Creation At</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -86,6 +88,8 @@ Bookings | A Logistics Company
                                         <span class="text-info"> <b>Complete</b> </span>
                                     @endif
                                 </td>
+                                <td>{{$booking->booking_date}}</td>
+                                <td>{{$booking->created_at}}</td>
                                 <td>
                                     <div class="btn-group">
                                         <a href="{{url('/edit-booking/'.$booking->booking_id)}}" class="btn btn-sm btn-primary">Edit</a>

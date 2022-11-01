@@ -117,6 +117,7 @@
                 <thead class="text-xs text-gray-700 uppercase bg-gray-50">
                     <tr class="text-center">
                         <th scope="col" class="py-3 px-6">Track The Booking</th>
+                        <th scope="col" class="py-3 px-6">Booking ID</th>
                         <th scope="col" class="py-3 px-6">Tracking ID</th>
                         <th scope="col" class="py-3 px-6">Company Name</th>
                         <th scope="col" class="py-3 px-6">Company Address</th>
@@ -137,6 +138,9 @@
                           <a href="{{url('/tracking/'.$booking->tracking_id)}}" class="">
                             <img src="{{asset('frontend/assets/images/icons8-ship-48.png')}}" alt="">
                           </a>
+                        </td>
+                        <td class="py-4 px-6 whitespace-nowrap">
+                          {{$booking->booking_id}}
                         </td>
                         <td class="py-4 px-6 whitespace-nowrap">
                           {{$booking->tracking_id}}

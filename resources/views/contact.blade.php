@@ -15,7 +15,7 @@
     <div class="h-full text-gray-800">
         <div class="grid md:grid-cols-2 gap-12">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.8170858156736!2d101.69790721522754!3d3.142938054066106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc49d0e9850f8f%3A0x84ee5fabba2ee59a!2sRumah%20B%20P%2C%204%2C%20Jalan%20Hang%20Jebat%2C%20City%20Centre%2C%2050150%20Kuala%20Lumpur%2C%20Wilayah%20Persekutuan%20Kuala%20Lumpur%2C%20Malaysia!5e0!3m2!1sen!2sbd!4v1660597056629!5m2!1sen!2sbd"
+                src="https://www.google.com.bd/maps/d/u/1/embed?mid=1d13KU7KTrbRGBCW9q-J_9YkAspJW6lU&ehbc=2E312F"
                 style="border: 0" allowfullscreen="" class="w-full h-full min-h-[450px]" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
                 @if (Session::has('message_sent'))
@@ -27,6 +27,12 @@
             <form class="w-full space-y-6" method="POST" action="{{route('contact.send')}}">
                 @csrf
                 <h1>Contact Us</h1>
+                <p> <span class="text-blue-600"><b>Tel: </b></span> +556135500943</p>
+                <p> <span class="text-blue-600"><b>Head Office: </b></span> Rua Blumenau 05, Itajai, Santa Catarina, Brazil</p>
+                <p> <span class="text-blue-600"><b>Email: </b></span> Calcarez45@gmail.com</p>
+                <p class="text-blue-600 text-xs italic text-center">
+                    You can email us through following form as well!!!
+                </p>
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full px-3">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"

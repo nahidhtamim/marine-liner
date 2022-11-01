@@ -28,30 +28,33 @@
     </div>
 </div>
 
-<!-- Intro start -->
-<div class="wrapper pb-0">
-    <div class="grid md:grid-cols-2 space-y-6 md:space-y-0 gap-16">
+
+<div class="wrapper space-y-14">
+    <div class="grid md:grid-cols-1 lg:grid-cols-2 space-y-6 pb-3 lg:space-y-0 gap-16">
         <!-- left -->
         <div class="space-y-6 flex flex-col justify-center order-last">
             <h2>Storage Services</h2>
             <p>We take pride in catering to a broad range of clientele throughout the world with our warehousing services, which is comprehensive, reliable and flexible – qualities that are essential to help businesses in this market. Our experienced experts design a supply chain flowchart tailored to meet your business and logistic needs, which focuses on not only increasing efficiency, but cutting down costs. With our vast network of warehouses and distribution centers spread throughout the country, it becomes much easier to cater to a audience in a record response time, which is the key factor in winning the hearts of the customer and having an edge over the competitors.
             </p>
-            <p>
-                Team of logistic experts are always available to help you with any queries you might have, or if you want to consult in length your logistic requirements. We would study your requirements and provide you with a quote that would not only suit your budget, but would also save you considerable amount of money in the long term. Our company has through years of experience in this industry has been able to create a network of associates across the length and breadth of country, with our own logistic centers spread throughout the country, which helps us to provide safe, reliable, economical and customized logistic solutions to our clients and partners. 
-            </p>
-            <div>
-                <a class="px-6 py-3 btn-primary" href="{{url('/contact')}}">
-                    Contact For More Info
-                </a>
-            </div>
         </div>
         <!-- right -->
-        <div class="">
-            <img src="{{asset('frontend/assets/images/services/storage.jpg')}}"
-                alt="background-image" class="shadow-xl rounded-xl object-cover" />
+        <div>
+            <img src="{{asset('frontend/assets/images/services/storage.jpg')}}" alt="background-image"
+                class="shadow-xl rounded-xl object-cover w-full" />
         </div>
     </div>
+    <div>
+        <p>
+            Team of logistic experts are always available to help you with any queries you might have, or if you want to consult in length your logistic requirements. We would study your requirements and provide you with a quote that would not only suit your budget, but would also save you considerable amount of money in the long term. Our company has through years of experience in this industry has been able to create a network of associates across the length and breadth of country, with our own logistic centers spread throughout the country, which helps us to provide safe, reliable, economical and customized logistic solutions to our clients and partners. 
+        </p>
+        <br>
+        <a class="px-6 mt-5 py-3 btn-primary" href="{{url('/contact')}}">
+            Contact For More Info
+        </a>
+            
+    </div>
+    
 </div>
-<!-- Intro end -->
+
 
 @endsection

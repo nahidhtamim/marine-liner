@@ -108,8 +108,12 @@ Route::group(['middleware' => ['auth','isAdmin','verified']], function () {
     Route::post('/save-tracking', [TrackingController::class, 'saveTracking']);
     Route::get('/edit-tracking/{id}', [TrackingController::class, 'editTracking']);
     Route::post('/update-tracking/{id}', [TrackingController::class, 'updateTracking']);
+    Route::post('/update-tracking/{id}', [TrackingController::class, 'updateTracking']);
     Route::get('/delete-tracking/{id}', [TrackingController::class, 'deleteTracking']);
-    Route::get('/tacking-complete/{id}', [TrackingController::class, 'tackingComplete']);
+    Route::get('/tracking-departed/{id}', [TrackingController::class, 'trackingDeparted']);
+    Route::get('/tracking-hold/{id}', [TrackingController::class, 'trackingHold']);
+    Route::get('/tracking-active/{id}', [TrackingController::class, 'trackingActive']);
+    Route::get('/tracking-complete/{id}', [TrackingController::class, 'trackingComplete']);
 
     // Route::get('/services', [CountryController::class, 'index']);
     // Route::get('/add-service', [CountryController::class, 'addService']);

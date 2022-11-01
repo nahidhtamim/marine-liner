@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 class BookingController extends Controller
 {
     public function index(){
-        $bookings = Booking::all();
+        $bookings = Booking::orderBy('id', 'DESC')->get();
         $countries = Country::all();
         $ports = Port::all();
         $containers = Container::all();

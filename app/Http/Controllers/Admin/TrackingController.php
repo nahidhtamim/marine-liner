@@ -12,7 +12,7 @@ class TrackingController extends Controller
 {
     public function index($tracking_id){
         $countries = Country::all();
-        $trackings = Tracking::get()->where('tracking_id', $tracking_id);
+        $trackings = Tracking::where('tracking_id', $tracking_id)->orderBy('id', 'DESC')->get();
         return view('admin.trackings.index', compact('trackings', 'countries', 'tracking_id'));
     }
 
@@ -51,9 +51,30 @@ class TrackingController extends Controller
         return redirect()->back()->with('warning', 'Tracking Deleted Successfully');
     }
 
-    public function tackingComplete($id){
+    public function trackingDeparted($id){
         $tracking = Tracking::where('id', $id)->first();
         $tracking->status = '1';
+        $tracking->update();
+        return redirect()->back()->with('status', 'Tracking Status Updated Successfully');
+    }
+    
+    // public function trackingActive($id){
+    //     $tracking = Tracking::where('id', $id)->first();
+    //     $tracking->status = '2';
+    //     $tracking->update();
+    //     return redirect()->back()->with('status', 'Tracking Status Updated Successfully');
+    // }
+
+    public function trackingHold($id){
+        $tracking = Tracking::where('id', $id)->first();
+        $tracking->status = '2';
+        $tracking->update();
+        return redirect()->back()->with('status', 'Tracking Status Updated Successfully');
+    }
+
+    public function trackingComplete($id){
+        $tracking = Tracking::where('id', $id)->first();
+        $tracking->status = '3';
         $tracking->update();
         return redirect()->back()->with('status', 'Tracking Status Updated Successfully');
     }

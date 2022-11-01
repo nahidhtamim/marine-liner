@@ -2,36 +2,33 @@
 
 @section('content')
 
-<div class="wrapper">
-    <div class="grid md:grid-cols-5 gap-14">
-      <!-- left -->
-      <div class="space-y-9 col-span-3 text-justify">
-        <h1 class="text-sky-700">Marine Line</h1>
+  <div class="wrapper space-y-14">
+    <div class="grid md:grid-cols-1 lg:grid-cols-2 space-y-6 pb-3 lg:space-y-0 gap-16">
+        <!-- left -->
+        <div class="space-y-6 flex flex-col justify-center order-last">
+            <h2>Marine Line</h2>
+            <p class="leading-6">
+              MARINE LINER is a MALAYSIAN based, professional and financially
+    sound company. It offers a powerful combination of strategic supply chain analysis and extensive practical experience, handling all shipping activities all over the world.
+            </p>
+    
+            <p class="leading-6">
+              Keeping customer satisfaction in mind, we enable ourselves to keep up our standards in all aspects of shipping, where integrity, efficiency and professionalism are part of our goal. We adequately handle all shipping spectrum under one roof.
+            </p>
+    
+            <p class="leading-6">
+              By focusing on delivering best-in-class service to our customers, we are always available to help you with your particular needs and offer you a one-stop-shop solution for your next shipping request.
+            </p>
 
-        <p class="leading-6">
-          MARINE LINER is a MALAYSIAN based, professional and financially
-sound company. It offers a powerful combination of strategic supply chain analysis and extensive practical experience, handling all shipping activities all over the world.
-        </p>
 
-        <p class="leading-6">
-          Keeping customer satisfaction in mind, we enable ourselves to keep up our standards in all aspects of shipping, where integrity, efficiency and professionalism are part of our goal. We adequately handle all shipping spectrum under one roof.
-        </p>
-
-        <p class="leading-6">
-          By focusing on delivering best-in-class service to our customers, we are always available to help you with your particular needs and offer you a one-stop-shop solution for your next shipping request.
-        </p>
-      </div>
-
-      <!-- right -->
-      <div class="flex justify-center items-center col-span-2 order-first">
-        <img
-          src="{{asset('frontend/assets/images/Work_3.jpg')}}"
-          class="w-full"
-          alt="about-image"
-        />
-      </div>
+        </div>
+        <!-- right -->
+        <div>
+            <img src="{{asset('frontend/assets/images/about.jpg')}}" alt="about-image"
+                class="shadow-xl rounded-xl object-cover w-full" />
+        </div>
     </div>
-  </div>
+</div>
 
   <div class="wrapper bg-slate-50">
     <div class="grid md:grid-cols-2 gap-9">
@@ -54,7 +51,7 @@ sound company. It offers a powerful combination of strategic supply chain analys
       >
         <div class="text-center">
           <img
-            src="{{asset('frontend/assets/images/ceo.jpg')}}"
+            src="{{asset('frontend/assets/images/CEO.jpg')}}"
             class="rounded-full w-80 h-120 object-cover shadow-lg ring-4 ring-sky-500"
             alt="image"
           />
