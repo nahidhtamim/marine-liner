@@ -133,7 +133,7 @@
 
     function get_port_by_from() {
         var from_country = $('#from_country').val();
-        $.post('{{ route('getCountryPorts') }}', {
+        $.post('{{ route('getCntryPorts') }}', {
                 _token: '{{ csrf_token() }}',
                 country_id: from_country
             },
@@ -148,16 +148,16 @@
                 }
             });
     }
-</script>
+  </script>
 
-<script type="text/javascript">
+  <script type="text/javascript">
     $('#destination_country').on('change', function () {
         get_port_by_destination();
     });
 
     function get_port_by_destination() {
         var destination_country = $('#destination_country').val();
-        $.post('{{ route('getCountryPorts') }}', {
+        $.post('{{ route('getCntryPorts') }}', {
                 _token: '{{ csrf_token() }}',
                 country_id: destination_country
             },
@@ -172,7 +172,8 @@
                 }
             });
     }
-</script>
+  </script>
+
 
 <script type="text/javascript">
     $('#current_country').on('change', function () {

@@ -55,7 +55,7 @@ Trackings | A Logistics Company
                                         <a href="{{url('/tracking-departed/'.$tracking->id)}}" class="btn btn-info btn-sm"> Mark Departed </a> </span>
                                     @elseif($tracking->status == 1)
                                         <span class="text-info"> <b>Departed</b> 
-                                            <a href="{{url('/tracking-active/'.$tracking->id)}}" class="btn btn-warning btn-sm"> Mark On Hold </a> </span>
+                                            <a href="{{url('/tracking-hold/'.$tracking->id)}}" class="btn btn-warning btn-sm"> Mark On Hold </a> </span>
                                     @elseif($tracking->status == 2)
                                         <span class="text-warning"> <b>On Hold</b> 
                                         <a href="{{url('/tracking-complete/'.$tracking->id)}}" class="btn btn-success btn-sm"> Mark Complete </a> </span>
